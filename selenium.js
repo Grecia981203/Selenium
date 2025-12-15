@@ -7,19 +7,17 @@ async function openGoogleInChrome() {
     let driver = await new Builder().forBrowser(Browser.CHROME).build();
 
     // Navigate to Google's homepage
-    await driver.get('https://www.google.com');
+    await driver.get('https://www.google.com);
 
     //Make the browser window full screen
     await driver.manage().window().maximize();
 
     // Wait for 3 seconds
-    await new Promise(resolve => setTimeout(resolve, 3000));
+    //await new Promise(resolve => setTimeout(resolve, 3000));
+    await driver.sleep(3000);
 
     // Wait for 2 seconds
-    await new Promise(resolve => setTimeout(resolve, 2000));
-    // Click on button with xpath
-    await driver.findElement({xpath: '//*[@id="gb"]/div[3]/a'}).click();
-
+    await driver.sleep(2000);
     // Close the driver
     //await driver.quit();
 }
