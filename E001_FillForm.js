@@ -64,9 +64,31 @@ async function FillForm(driver, link) {
     await driver.findElement({className: 'radius'}).click();
     await driver.sleep(5000);
 
+    // Check if the login was successful by looking for a logout button
+    try {
+        const successMessageLogin = await driver.findElement({css: '.flash.success'});
+        console.log('Login successful');
+        //Take a screenshot after login
+        await driver.takeScreenshot().then(
+            function(image) {
+                fs.writeFileSync('C:\\Users\\greis\\Documents\\Cursos\\Selenium-JS\\screenshot_login.png', image, 'base64');
+            }
+        );
+    } catch (error) {
+        console.log('Login failed');
+        await driver.takeScreenshot().then(
+            function(image) {
+                fs.writeFileSync('C:\\Users\\greis\\Documents\\Cursos\\Selenium-JS\\screenshot_login.png', image, 'base64');
+            }
+        );
+    }
+
     //Find the logout button by its xpath and click it
-    await driver.findElement({xpath: '//*[@id="content"]/div/a/i'}).click();
-    await driver.sleep(5000);
+    //await driver.findElement({xpath: '//*[@id="content"]/div/a/i'}).click();
+    //await driver.sleep(5000);
+    
+    await driver.sleep(3000)
+    // 
 
 }
 

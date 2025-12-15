@@ -7,7 +7,7 @@ async function openGoogleInChrome() {
     let driver = await new Builder().forBrowser(Browser.CHROME).build();
 
     // Navigate to Google's homepage
-    await driver.get('https://www.google.com);
+    await driver.get('https://www.google.com');
 
     //Make the browser window full screen
     await driver.manage().window().maximize();
@@ -19,7 +19,7 @@ async function openGoogleInChrome() {
     // Wait for 2 seconds
     await driver.sleep(2000);
     // Close the driver
-    //await driver.quit();
+    await driver.quit();
 }
 
 openGoogleInChrome();
