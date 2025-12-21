@@ -1,5 +1,5 @@
 {
-  "name": "selenium-js",
+  "name": "selenium",
   "version": "1.0.0",
   "description": "",
   "homepage": "https://github.com/Grecia981203/Selenium-JS#readme",
@@ -18,6 +18,8 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
+    "csv-parser": "^3.2.0",
     "selenium-webdriver": "^4.39.0"
-  }
+  },
+  "keywords": []
 }
