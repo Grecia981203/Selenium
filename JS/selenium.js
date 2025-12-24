@@ -13,15 +13,13 @@ async function openGoogleInChrome() {
     await driver.manage().window().maximize();
 
     // Wait for 3 seconds
-    await new Promise(resolve => setTimeout(resolve, 3000));
+    //await new Promise(resolve => setTimeout(resolve, 3000));
+    await driver.sleep(3000);
 
     // Wait for 2 seconds
-    await new Promise(resolve => setTimeout(resolve, 2000));
-    // Click on button with xpath
-    await driver.findElement({xpath: '//*[@id="gb"]/div[3]/a'}).click();
-
+    await driver.sleep(2000);
     // Close the driver
-    //await driver.quit();
+    await driver.quit();
 }
 
 openGoogleInChrome();
